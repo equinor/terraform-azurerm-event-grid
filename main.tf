@@ -46,12 +46,17 @@ resource "azurerm_eventgrid_system_topic_event_subscription" "this" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "this" {
-  name                       = "failure-logs"
-  target_resource_id         = azurerm_eventgrid_system_topic.this.id
-  log_analytics_workspace_id = var.log_analytics_workspace_id
+  name                           = "failure-logs"
+  target_resource_id             = azurerm_eventgrid_system_topic.this.id
+  log_analytics_workspace_id     = var.log_analytics_workspace_id
+  log_analytics_destination_type = var.log_analytics_destination_type
 
-  enabled_log {
-    category = "DeliveryFailures"
+  dynamic "enabled_log" {
+    for_each = toset(var.diagnostic_setting_enabled_log_categories)
+
+    content {
+      category = enabled_log.value
+    }
   }
 
   metric {
