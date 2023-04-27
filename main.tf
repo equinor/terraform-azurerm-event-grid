@@ -46,7 +46,7 @@ resource "azurerm_eventgrid_system_topic_event_subscription" "this" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "this" {
-  name                           = "failure-logs"
+  name                           = var.diagnostic_setting_name
   target_resource_id             = azurerm_eventgrid_system_topic.this.id
   log_analytics_workspace_id     = var.log_analytics_workspace_id
   log_analytics_destination_type = var.log_analytics_destination_type
