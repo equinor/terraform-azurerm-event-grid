@@ -27,6 +27,23 @@ variable "log_analytics_workspace_id" {
   description = "The ID of the Log Analytics workspace to send diagnostics to."
   type        = string
 }
+variable "log_analytics_destination_type" {
+  description = "The type of log analytics destination to use for this Log Analytics Workspace."
+  type        = string
+  default     = null
+}
+
+variable "diagnostic_setting_name" {
+  description = "The name of this diagnostic setting."
+  type        = string
+  default     = "failure-logs"
+}
+
+variable "diagnostic_setting_enabled_log_categories" {
+  description = "A list of log categories to be enabled for this diagnostic setting."
+  type        = list(string)
+  default     = ["DeliveryFailures"]
+}
 
 variable "event_subscriptions" {
   description = "A map of event subscription to create for this Event Grid system topic. One of the endpoints must be specified."
