@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.1.0...v1.1.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* don't specify Log Analytics destination type ([#8](https://github.com/equinor/terraform-azurerm-event-grid/issues/8)) ([3a0ef21](https://github.com/equinor/terraform-azurerm-event-grid/commit/3a0ef21a5fda8a6cdfea59a5c0a7f3d3ab576734))
+
 ## [1.1.0](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.0.0...v1.1.0) (2023-04-27)
 
 
