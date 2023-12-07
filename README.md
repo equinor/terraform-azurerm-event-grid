@@ -4,3 +4,7 @@
 [![Equinor Terraform Baseline](https://img.shields.io/badge/Equinor%20Terraform%20Baseline-1.0.0-blueviolet)](https://github.com/equinor/terraform-baseline)
 
 Template module which creates Azure Event Grid resources.
+
+## Contributing
+
+See [Contributing guidelines](CONTRIBUTING.md).
