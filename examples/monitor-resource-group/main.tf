@@ -42,7 +42,7 @@ module "event_grid" {
   resource_group_name        = var.resource_group_name
   location                   = "Global"
   topic_type                 = "Microsoft.Resources.ResourceGroups"
-  source_arm_resource_id     = azurerm_resource_group.example.id
+  source_arm_resource_id     = data.azurerm_resource_group.example.id
   log_analytics_workspace_id = module.log_analytics.workspace_id
 
   event_subscriptions = {
@@ -51,7 +51,7 @@ module "event_grid" {
 
       storage_queue_endpoint = {
         storage_account_id = module.storage.account_id
-        queue_name         = data.azurerm_storage_queue.example.name
+        queue_name         = azurerm_storage_queue.example.name
       }
     }
   }
