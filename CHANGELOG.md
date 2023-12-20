@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.1.1...v1.1.2) (2023-12-20)
+
+
+### Bug Fixes
+
+* remove diagnostic setting retention policies ([#18](https://github.com/equinor/terraform-azurerm-event-grid/issues/18)) ([81ab8d0](https://github.com/equinor/terraform-azurerm-event-grid/commit/81ab8d0a4d9203a11bc8049f3d6bc2be1a160859))
+
 ## [1.1.1](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.1.0...v1.1.1) (2023-08-31)
 
 
