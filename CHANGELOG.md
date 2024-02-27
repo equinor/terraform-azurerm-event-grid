@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.1.2...v1.2.0) (2024-02-27)
+
+
+### Features
+
+* disable metrics by default ([#23](https://github.com/equinor/terraform-azurerm-event-grid/issues/23)) ([9d30710](https://github.com/equinor/terraform-azurerm-event-grid/commit/9d30710f7cdbb549f04a03d227065301e0b1f20f))
+
 ## [1.1.2](https://github.com/equinor/terraform-azurerm-event-grid/compare/v1.1.1...v1.1.2) (2023-12-20)
 
 
