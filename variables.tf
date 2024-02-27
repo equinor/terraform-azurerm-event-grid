@@ -40,6 +40,12 @@ variable "diagnostic_setting_enabled_log_categories" {
   default     = ["DeliveryFailures"]
 }
 
+variable "diagnostic_setting_enabled_metric_categories" {
+  description = "A list of metric categories to be enabled for this diagnostic setting."
+  type        = list(string)
+  default     = []
+}
+
 variable "event_subscriptions" {
   description = "A map of event subscription to create for this Event Grid system topic. One of the endpoints must be specified."
 
