@@ -6,9 +6,9 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
-func TestMonitorResourceGroupExample(t *testing.T) {
+func TestBasicExample(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../examples/monitor-resource-group",
+		TerraformDir: "../examples/ba",
 	})
 
 	defer terraform.Destroy(t, terraformOptions)

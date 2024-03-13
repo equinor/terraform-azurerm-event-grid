@@ -46,30 +46,6 @@ variable "diagnostic_setting_enabled_metric_categories" {
   default     = []
 }
 
-variable "event_subscriptions" {
-  description = "A map of event subscription to create for this Event Grid system topic. One of the endpoints must be specified."
-
-  type = map(object({
-    name                 = string
-    included_event_types = optional(list(string))
-
-    azure_function_endpoint = optional(object({
-      function_id = string
-    }))
-
-    storage_queue_endpoint = optional(object({
-      storage_account_id = string
-      queue_name         = string
-    }))
-
-    webhook_endpoint = optional(object({
-      url = string
-    }))
-  }))
-
-  default = {}
-}
-
 variable "tags" {
   description = "A map of tags to assign to the resources."
   type        = map(string)
