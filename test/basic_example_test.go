@@ -8,7 +8,7 @@ import (
 
 func TestBasicExample(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../examples/ba",
+		TerraformDir: "../examples/basic",
 	})
 
 	defer terraform.Destroy(t, terraformOptions)
