@@ -5,10 +5,6 @@
 
 Template module which creates Azure Event Grid resources.
 
-## Usage
-
-See [examples](examples).
-
 ## Development
 
 1. Read [this document](https://code.visualstudio.com/docs/devcontainers/containers).
