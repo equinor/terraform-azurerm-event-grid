@@ -14,22 +14,6 @@ module "log_analytics" {
   location            = var.location
 }
 
-module "storage" {
-  source = "github.com/equinor/terraform-azurerm-storage?ref=v10.3.0"
-
-  account_name                 = "st${random_id.example.hex}"
-  resource_group_name          = var.resource_group_name
-  location                     = var.location
-  log_analytics_workspace_id   = module.log_analytics.workspace_id
-  shared_access_key_enabled    = true
-  network_rules_default_action = "Allow"
-}
-
-resource "azurerm_storage_queue" "example" {
-  name                 = "event-queue"
-  storage_account_name = module.storage.account_name
-}
-
 data "azurerm_resource_group" "example" {
   name = var.resource_group_name
 }
@@ -44,15 +28,4 @@ module "event_grid" {
   topic_type                 = "Microsoft.Resources.ResourceGroups"
   source_arm_resource_id     = data.azurerm_resource_group.example.id
   log_analytics_workspace_id = module.log_analytics.workspace_id
-
-  event_subscriptions = {
-    "example" = {
-      name = "evgs-${random_id.example.hex}"
-
-      storage_queue_endpoint = {
-        storage_account_id = module.storage.account_id
-        queue_name         = azurerm_storage_queue.example.name
-      }
-    }
-  }
 }
